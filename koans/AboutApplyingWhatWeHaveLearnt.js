@@ -32,12 +32,22 @@ describe("About Applying What We Have Learnt", function() {
         }
     }
 
-    expect(productsICanEat.length).toBe(FILL_ME_IN);
+    expect(productsICanEat.length).toBe(1);
   });
 
   it("given I'm allergic to nuts and hate mushrooms, it should find a pizza I can eat (functional)", function () {
 
       var productsICanEat = [];
+
+      var nutFilter = function(obj){
+        if(obj.containsNuts === false){
+          return false;
+        } else {
+          return true;
+        }
+      };
+      var shroomFilter = function(obj){
+        if(obj.ingredients.any)
 
       /* solve using filter() & all() / any() */
 
@@ -53,9 +63,10 @@ describe("About Applying What We Have Learnt", function() {
       if (i % 3 === 0 || i % 5 === 0) {
         sum += i;
       }
+      return sum;
     }
 
-    expect(sum).toBe(FILL_ME_IN);
+    expect(sum).toBe(233168);
   });
 
   it("should add all the natural numbers below 1000 that are multiples of 3 or 5 (functional)", function () {
